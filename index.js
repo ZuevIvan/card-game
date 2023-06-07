@@ -20,28 +20,33 @@ levelButtons.forEach(button => {
     button.addEventListener('click', selectLevel);
 });
 
-// Функция обработки нажатия кнопки "Старт"
-function handleStartGame() {
-    if (selectedLevel !== null) {
-        // Осуществляем перенаправление на новую страницу с фотографией
-        switch (selectedLevel) {
-            case 1:
-                window.location.href = './easy.html';
-                break;
-            case 2:
-                window.location.href = './medium.html';
-                break;
-            case 3:
-                window.location.href = './hard.html';
-                break;
-            default:
-                console.log('Неправильный уровень сложности');
-        }
-    } else {
-        console.log('Пожалуйста, выберите уровень сложности');
-    }
-}
-
 // Добавляем обработчик события для кнопки "Старт"
 const startButton = document.querySelector('.start-button');
-startButton.addEventListener('click', handleStartGame);
+        if (startButton) {
+            startButton.addEventListener('click', function() {
+                if (selectedLevel !== null) {
+                    switch (selectedLevel) {
+                        case 1:
+                            window.location.href = './easy.html';
+                            break;
+                        case 2:
+                            window.location.href = './medium.html';
+                            break;
+                        case 3:
+                            window.location.href = './hard.html';
+                            break;
+                        default:
+                            console.log('Неправильный уровень сложности');
+                    }
+                } else {
+                    console.log('Пожалуйста, выберите уровень сложности');
+                }
+            });
+        }
+
+// Кнопка возвращения на страницу с уровнем сложности
+const backButton = document.querySelector('.back-button');
+backButton.addEventListener('click', function() {
+    console.log('назад');
+    window.location.href = './index.html';
+});

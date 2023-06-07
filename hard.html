@@ -7,8 +7,16 @@
     <title>Hard</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Сложный уровень </h1>
-    <img src="/img/hard.jpeg" alt="Photo - Easy">
+<body class="skill-body">
+    <h1 class="skill-title">Сложный уровень </h1>
+    <img class="photo" src="/img/hard.jpeg" alt="Photo - Easy">
+    <button class="back-button">Выбор уровня сложности</button>
+    <script src="/index.js"></script>
+    <script>
+        const backButton = document.querySelector('.back-button');
+        backButton.addEventListener('click', function() {
+            window.location.href = './index.html';
+        });
+    </script>
 </body>
 </html>
