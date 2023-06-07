@@ -1,6 +1,19 @@
+@font-face {
+
+  font-family: 'StratosSkyengWeb';
+
+  src: url('StratosSkyengWeb.woff2') format('woff2'),
+
+       url('StratosSkyengWeb.woff') format('woff');
+
+}
+
 body {
     background: #004980;
+    font-family: 'StratosSkyengWeb', sans-serif;    
   }
+
+
   
   .container {
     display: flex;
@@ -21,7 +34,6 @@ body {
   }
   
   .title {
-    font-family: 'StratosSkyeng';
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
@@ -48,7 +60,6 @@ body {
     height: 98px;
     background: #FFFFFF;
     border-radius: 12px;
-    font-family: 'StratosSkyeng';
     font-style: normal;
     font-weight: 400;
     font-size: 64px;
@@ -66,7 +77,6 @@ body {
     height: 50px;
     background: #7AC100;
     border-radius: 12px;
-    font-family: 'StratosSkyeng';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
