@@ -114,11 +114,15 @@ body {
 }
 
 .skill-title{
+
   color: #7AC100;
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
   line-height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 } 
 
 .photo{
@@ -126,3 +130,114 @@ body {
   height: 480px;
 }
 
+
+
+.hub-timer{
+  margin-top: 52px;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.timer-btn{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.time-btn{
+  margin-top: 5px;
+  background: #7AC100;
+  border-radius: 12px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+}
+.timer-show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer {
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.timer-text {
+  display: flex;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #FFFFFF;
+
+  /* margin-left: 50px;
+  margin-right: 6px; Увеличьте значение margin-right для увеличения пробела */
+}
+
+.timer-text-min{
+  margin-left: 40px;
+}
+.timer-text-sek{
+  margin-right: 30px;
+}
+
+.hub-cart{
+  padding-left: 26px;
+  padding-right: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap; /* Prevent wrapping to the next line */
+
+}
+
+
+.one.suit {
+  flex: 0 0 auto; /* Ensure each div takes up its content width */
+}
+
+.card{
+  padding: 15px;
+}
+
+.hub-menu{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flip-button{
+  margin-top: 20px;
+  height: 50px;
+  background: #7AC100;
+  border-radius: 12px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #FFFFFF;
+
+}
