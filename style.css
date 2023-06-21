@@ -11,9 +11,18 @@ body {
 
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 100vh;
+}
+
+.button,
+.start-button,
+.back-button,
+.time-btn,
+.flip-button {
+  border: none;
+  outline: none;
 }
 
 .square {
@@ -25,6 +34,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin-top: 154px;
 }
 
 .title {
@@ -37,13 +47,15 @@ body {
   color: #004980;
   padding-left: 136px;
   padding-right: 136px;
+  margin-bottom: 0px;
+  margin-top: 48px;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 48px;
+  margin-top: 48px;
   padding-bottom: 67px;
 }
 
@@ -88,6 +100,7 @@ body {
   color: #FFFFFF;
   padding-right: 117px;
   padding-left: 117px;
+  margin-bottom: 48px;
 }
 
 .skill-body{
@@ -179,9 +192,10 @@ body {
 }
 
 .timer-text {
-  display: flex;
-  font-style: normal;
-  font-weight: 400;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  justify-items: end;
   font-size: 16px;
   font-feature-settings: 'pnum' on, 'lnum' on;
   color: #FFFFFF;
@@ -191,11 +205,15 @@ body {
 }
 
 .timer-text-min{
-  margin-left: 40px;
+  margin: 0;
 }
+
 .timer-text-sek{
-  margin-right: 30px;
+  margin: 0;
+
 }
+
+
 
 .hub-cart{
   padding-left: 26px;
