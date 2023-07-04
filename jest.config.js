@@ -5,4 +5,5 @@ module.exports = {
     moduleNameMapper: {
         '\\.(css|less|sass|scss)$': '<rootDir>/jest/stylesTransform.js',
     },
+    //setupFilesAfterEnv: ['<rootDir>/setup-tests.js'],
 };

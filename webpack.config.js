@@ -1,10 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const isProduction = process.env.NODE_ENV == 'production';
+const isProduction = process.env.NODE_ENV == 'development';
 module.exports = {
-    entry: './src/index.ts',
+    entry: './index.ts',
     mode: isProduction ? 'production' : 'development',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -20,15 +22,15 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
             },
             {
-                test: /\. (woff|woff2|eot|ttf|otf)$/i,
+                test: /\. (woff|woff2|eotIttflotf)$/i,
                 type: 'asset/resource',
             },
         ],
@@ -37,14 +39,21 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.js'],
     },
+
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html',
+            template: './index.html',
         }),
+        new MiniCssExtractPlugin({
+            filename: 'index.css',
+        }),
+
         new CopyWebpackPlugin({
-            patterns: [{ from: 'src/assets/image', to: 'images' }],
+            patterns: [{ from: 'assets/image', to: 'images' }],
         }),
     ],
-    
+    optimization: {
+        minimizer: ['...', new CssMinimizerPlugin()],
+    },
     devtool: isProduction ? 'hidden-source-map' : 'source-map',
 };

@@ -1,15 +1,14 @@
 import { goToPage } from '../../index';
 
-const app: HTMLElement | null = document.getElementById('root');
+const app: HTMLElement = document.getElementById('root')!;
 
 interface Time {
     min: string;
-    sec: string;
+    sec: string
 }
 
-export const EndGame = (isWin: boolean, time: Time) => {
-    if (app) {
-        app.innerHTML += `
+export const EndGame = (isWin: Boolean, time: Time ) => {
+    app.innerHTML += `
         <div class="end">
             <div class="end__wrap">
                 <img class="end__image" src="./images/${
@@ -24,9 +23,8 @@ export const EndGame = (isWin: boolean, time: Time) => {
             </div>
         </div>
     `;
-        const againButton = document.querySelector('.end__again');
-        againButton?.addEventListener('click', () => {
-            goToPage('Difficulty');
-        });
-    }
+    const againButton = document.querySelector('.end__again');
+    againButton?.addEventListener('click', () => {
+        goToPage('Difficulty');
+    });
 };

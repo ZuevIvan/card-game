@@ -11,18 +11,18 @@
     width: 246px;
     height: 50px;
     background: #969696;
-    border: 0;
+    border: none;
     border-radius: 12px;
+    
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 32px;
-    color: #fff;
+    color: #ffffff;
 
     &--active {
         background: #7ac100;
         cursor: pointer;
-
         &:hover {
             opacity: 0.7;
         }
@@ -41,7 +41,6 @@
         line-height: 10px;
         color: #fff;
     }
-
     &__counter {
         font-style: normal;
         font-weight: 400;
@@ -53,19 +52,16 @@
 
 .game {
     max-width: 1024px;
-
     &__field {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
     }
-
     &__card {
         border-radius: 4px;
         transition: transform 0.3s;
         cursor: pointer;
-
         &:hover {
             transform: scale(1.1);
         }

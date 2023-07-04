@@ -1,5 +1,5 @@
 @font-face {
-    font-family: StratosSkyeng;
+    font-family: 'StratosSkyeng';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-    font-family: StratosSkyeng;
+    font-family: 'StratosSkyeng';
     font-style: normal;
     font-weight: 500;
     font-display: swap;
@@ -18,13 +18,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: StratosSkyeng, sans-serif;
+    font-family: 'StratosSkyeng';
 }
 
 li {
     list-style: none;
 }
-
 .container {
     background: #004980;
     padding: 20px;
@@ -34,9 +33,8 @@ li {
     flex-direction: column;
     align-items: center;
 }
-/* stylelint-disable */
 @import '../components/difficulty/difficulty';
 @import '../components/game/game';
 @import '../components/end-game/end-game';
 @import './adaptive';
-/* stylelint-enable */
+
