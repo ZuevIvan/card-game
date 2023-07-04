@@ -1,5 +1,5 @@
 /* tablet */
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .container {
         padding: 20px;
     }
@@ -46,7 +46,7 @@
 }
 
 /* mobile */
-@media (max-width: 375px) {
+@media (width <= 375px) {
     /* difficulty */
     .difficulty {
         &__value-wrap {

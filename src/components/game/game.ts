@@ -58,26 +58,30 @@ const checkTheWin = () => {
     return true;
 };
 const checkTheCuple = (firstOpenCard: Card, secondOpenCard: Card) => {
-    const min: string = document.querySelector(
+    const minEl: HTMLElement | null = document.querySelector(
         '.timer__counter--min'
-    )!.innerHTML;
-    const sec: string = document.querySelector(
+    );
+    const secEl: HTMLElement | null = document.querySelector(
         '.timer__counter--sec'
-    )!.innerHTML;
-    if (firstOpenCard.value !== secondOpenCard.value) {
-        EndGame(false, { min: min, sec: sec });
-    } else {
-        firstOpenCard.nod?.setAttribute('data-status', 'open');
-        secondOpenCard.nod?.setAttribute('data-status', 'open');
-
-        if (checkTheWin()) {
-            EndGame(true, { min: min, sec: sec });
+    );
+    const min = minEl?.innerHTML;
+    const sec = secEl?.innerHTML;
+    if (min && sec) {
+        if (firstOpenCard.value !== secondOpenCard.value) {
+            EndGame(false, { min: min, sec: sec });
         } else {
-            firstOpenCard.value = '';
-            firstOpenCard.nod = null;
+            firstOpenCard.nod?.setAttribute('data-status', 'open');
+            secondOpenCard.nod?.setAttribute('data-status', 'open');
 
-            secondOpenCard.value = '';
-            secondOpenCard.nod = null;
+            if (checkTheWin()) {
+                EndGame(true, { min: min, sec: sec });
+            } else {
+                firstOpenCard.value = '';
+                firstOpenCard.nod = null;
+
+                secondOpenCard.value = '';
+                secondOpenCard.nod = null;
+            }
         }
     }
 };
@@ -92,26 +96,34 @@ const startGame = () => {
         nod: null,
     };
     // актвируем кнопку Начать заново
-    const newGame: HTMLElement = document.querySelector('.new-game')!;
-    newGame.classList.add('new-game--active');
-    newGame.addEventListener('click', () => {
-        goToPage('Difficulty');
-    });
+    const newGame: HTMLElement | null = document.querySelector('.new-game');
+    if (newGame) {
+        newGame.classList.add('new-game--active');
+        newGame.addEventListener('click', () => {
+            goToPage('Difficulty');
+        });
+    }
 
     // запуск таймера
-    const min: HTMLElement = document.querySelector('.timer__counter--min')!;
-    const sec: HTMLElement = document.querySelector('.timer__counter--sec')!;
+    const minEl: HTMLElement | null = document.querySelector(
+        '.timer__counter--min'
+    );
+    const secEl: HTMLElement | null = document.querySelector(
+        '.timer__counter--sec'
+    );
 
     let second = '';
     let minute = '';
     setInterval(() => {
-        second = (Number(sec.innerHTML) + 1).toString();
-        if (Number(second) < 60) {
-            sec.innerHTML = Number(second) < 10 ? '0' + second : second;
-        } else {
-            minute = (Number(min.innerHTML) + 1).toString();
-            min.innerHTML = Number(minute) < 10 ? '0' + minute : minute;
-            sec.innerHTML = '00';
+        if (secEl && minEl) {
+            second = (Number(secEl.innerHTML) + 1).toString();
+            if (Number(second) < 60) {
+                secEl.innerHTML = Number(second) < 10 ? '0' + second : second;
+            } else {
+                minute = (Number(minEl.innerHTML) + 1).toString();
+                minEl.innerHTML = Number(minute) < 10 ? '0' + minute : minute;
+                secEl.innerHTML = '00';
+            }
         }
     }, 1000);
 
@@ -130,6 +142,7 @@ const startGame = () => {
                 if (!firstOpenCard.value) {
                     firstOpenCard.value = htmlCard.dataset.value;
                     firstOpenCard.nod = htmlCard;
+                    firstOpenCard.nod?.setAttribute('data-status', 'open');
                 } else {
                     secondOpenCard.value = htmlCard.dataset.value;
                     secondOpenCard.nod = htmlCard;

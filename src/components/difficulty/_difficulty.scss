@@ -10,7 +10,6 @@
 
     &__text {
         width: 208px;
-        font-family: StratosSkyeng;
         font-style: normal;
         font-weight: 400;
         font-size: 40px;
@@ -36,7 +35,6 @@
         background: #fff;
         border-radius: 12px;
         border: 2px solid #fff;
-        font-family: StratosSkyeng;
         font-style: normal;
         font-weight: 400;
         font-size: 64px;
@@ -45,7 +43,7 @@
         cursor: pointer;
         transition: transform 0.3s;
 
-        & input[type='radio'] {
+        &-radio {
             display: none;
         }
 
@@ -62,7 +60,7 @@
         width: 246px;
         height: 50px;
         background: #969696;
-        border: none;
+        border: 0;
         border-radius: 12px;
         font-style: normal;
         font-weight: 400;

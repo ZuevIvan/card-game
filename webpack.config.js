@@ -45,6 +45,6 @@ module.exports = {
             patterns: [{ from: 'src/assets/image', to: 'images' }],
         }),
     ],
-
+    
     devtool: isProduction ? 'hidden-source-map' : 'source-map',
 };

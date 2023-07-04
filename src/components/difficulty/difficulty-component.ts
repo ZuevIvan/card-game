@@ -12,15 +12,15 @@ export const DifficultyPage = (app: HTMLElement) => {
       <form class="difficulty__form">
         <div class="difficulty__value-wrap">
           <label class="difficulty__value">
-            <input type="radio" name="difficulty" value="1">
+            <input class="difficulty__value-radio" type="radio" name="difficulty" value="1">
             <span>1</span>
           </label>
           <label class="difficulty__value">
-            <input type="radio" name="difficulty" value="2">
+            <input class="difficulty__value-radio" type="radio" name="difficulty" value="2">
             <span>2</span>
           </label>
           <label class="difficulty__value">
-            <input type="radio" name="difficulty" value="3">
+            <input class="difficulty__value-radio" type="radio" name="difficulty" value="3">
             <span>3</span>
           </label>
         </div>
