@@ -142,6 +142,7 @@ const startGame = () => {
                 if (!firstOpenCard.value) {
                     firstOpenCard.value = htmlCard.dataset.value;
                     firstOpenCard.nod = htmlCard;
+                    firstOpenCard.nod?.setAttribute('data-status', 'open');
                 } else {
                     secondOpenCard.value = htmlCard.dataset.value;
                     secondOpenCard.nod = htmlCard;
