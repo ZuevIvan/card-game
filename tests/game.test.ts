@@ -1,5 +1,5 @@
 import { it, expect, describe } from '@jest/globals';
-import { getSuit, getRank, fillCardsArray } from '../components/game/game';
+import { getSuit, getRank, fillCardsArray } from '../src/components/game/game';
 
 describe('getSuit', () => {
     it('should return "spades" when the input is 1', () => {
